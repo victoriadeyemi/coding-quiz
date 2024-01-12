@@ -7,6 +7,10 @@ const questions = [];
 const questionTitle = [];
 const choices = [];
 const endScreen = [];
+const finalScore = [];
+const initials = [];
+const feedback = [];
+
 
 
 
