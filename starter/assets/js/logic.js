@@ -16,7 +16,7 @@ const feedback = document.getElementById("feedback");
 const correctTune = new Audio("./assets/sfx/correct.wav");
 const incorrectTune = new Audio("./assets/sfx/incorrect.wav");
 //console.log(correctTune)
-console.log(incorrectTune)
+//console.log(incorrectTune)
 
 
 
