@@ -9,7 +9,10 @@ const choices = [];
 const endScreen = [];
 const finalScore = [];
 const initials = [];
+const submit = [];
 const feedback = [];
+
+
 
 
 
