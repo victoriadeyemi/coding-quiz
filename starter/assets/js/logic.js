@@ -18,8 +18,15 @@ const incorrectTune = new Audio("./assets/sfx/incorrect.wav");
 //console.log(correctTune)
 //console.log(incorrectTune)
 
-
+start.addEventListener("click", startQuiz);
+submit.addEventListener("click", saveScore);
+60000 // 60 seconds
 
 //When answer is clicked, the next question appears- use const questions, questiontitle, choices
+//When the start button is clicked, the first question appears
+//When the start button is clicked, the timer starts
+//When the start button is clicked, the start screen disappears
+//When the start button is clicked, the first question appears
+//When the start button is clicked, the timer starts
 //If the answer clicked was incorrect then subtract time from the clock
 //run a timer function
