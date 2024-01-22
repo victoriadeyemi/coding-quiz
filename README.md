@@ -1,2 +1,2 @@
 # coding-quiz
-Quiz created using html, CSS and javascript.
+Quiz created using html, CSS and javaScript.
