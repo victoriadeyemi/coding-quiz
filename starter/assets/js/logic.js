@@ -12,6 +12,8 @@ const initials = document.getElementById("initials");
 const submit = document.getElementById("submit");
 const feedback = document.getElementById("feedback");
 
+var questionIndex = 0;
+
 //Sound effects
 const correctTune = new Audio("./assets/sfx/correct.wav");
 const incorrectTune = new Audio("./assets/sfx/incorrect.wav");
