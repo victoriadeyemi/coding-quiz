@@ -33,3 +33,12 @@ const quizQuestions = [
         answer: "console.log",
     },
 ]
+
+function startQuiz() {
+    startScreen.setAttribute("class", "hide");
+    questions.removeAttribute("class");
+    timer();
+    getQuestion();
+}
+
+startQuiz();
