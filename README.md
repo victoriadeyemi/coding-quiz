@@ -10,6 +10,7 @@ Code functions created:
 * When answer is clicked, the next question appears
 * The quiz ends when all questions are answered or the timer reaches 0.
 * When the game ends, it displays user's score and gives the user the ability to save their initials and their score.
+* User is able to clear highscores and re-start quiz.
 
 
 Link to quiz Github Repository: https://github.com/victoriadeyemi/coding-quiz
