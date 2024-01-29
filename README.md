@@ -4,7 +4,7 @@ Quiz created using html, CSS and javaScript.
 Created variables for all the ids in the starter html files. 
 Linked the logic, questions and scores javaScripts.
 
-Code functions created to answer requirement of the starter readme:
+Code functions created:
 * Start button to begin the quiz
 * Questions contain buttons for each answer.
 * When answer is clicked, the next question appears
