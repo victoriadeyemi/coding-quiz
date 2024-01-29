@@ -41,20 +41,21 @@ function timer() {
     }, 1000);
 }
 function getQuestion() {
-    var currentQuestion = questions[questionIndex];
+    var currentQuestion = quizQuestions[questionIndex];
     questionTitle.textContent = currentQuestion.title;
     choices.innerHTML = "";
-    currentQuestion.choices.forEach(function(choice, i) {
+    for(var i = 0; i < currentQuestion.options.length; i++) {
         var choiceNode = document.createElement("button");
+        var choice = currentQuestion.options[i];
         choiceNode.setAttribute("class", "choice");
         choiceNode.setAttribute("value", choice);
         choiceNode.textContent = i + 1 + ". " + choice;
         choiceNode.onclick = questionClick;
         choices.appendChild(choiceNode);
-    });
+    };
 }
 function questionClick() {
-    if (this.value !== questions[questionIndex].answer) {
+    if (this.value !== quizQuestions[questionIndex].answer) {
         timeLeft -= 10;
         if (timeLeft < 0) {
             timeLeft = 0;
@@ -71,7 +72,7 @@ function questionClick() {
         feedback.setAttribute("class", "feedback hide");
     }, 1000);
     questionIndex++;
-    if (questionIndex === questions.length) {
+    if (questionIndex === quizQuestions.length) {
         endQuiz();
     } else {
         getQuestion();
@@ -83,13 +84,13 @@ function endQuiz() {
     finalScore.textContent = timeLeft;
 }
 function saveScore() {
-    var initials = initials.value.trim();
-    if (initials !== "") {
+    var userInitials = initials.value.trim();
+    if (userInitials !== "") {
         var highscores =
             JSON.parse(window.localStorage.getItem("highscores")) || [];
         var newScore = {
             score: timeLeft,
-            initials: initials
+            initials: userInitials
         };
         highscores.push(newScore);
         window.localStorage.setItem("highscores", JSON.stringify(highscores));
@@ -97,12 +98,3 @@ function saveScore() {
     }
 }
 
-
-//When answer is clicked, the next question appears- use const questions, questiontitle, choices
-//When the start button is clicked, the first question appears
-//When the start button is clicked, the timer starts
-//When the start button is clicked, the start screen disappears
-//When the start button is clicked, the first question appears
-//When the start button is clicked, the timer starts
-//If the answer clicked was incorrect then subtract time from the clock
-//run a timer function

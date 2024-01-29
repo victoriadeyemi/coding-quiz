@@ -1,11 +1,16 @@
 
 function getScores() {
     var scores = [];
-    var score = localStorage.getItem("score");
-    if (score !== null) {
-        scores = JSON.parse(score);
+    var highscores = localStorage.getItem("highscores");
+    if (highscores !== null) {
+        scores = JSON.parse(highscores);
     }
-    return scores;
+    for(var i =0; i < scores.length; i++) {
+        var liEl = document.createElement("li");
+        liEl.textContent = scores[i].initials + " - " + scores[i].score;
+        var highscoresList = document.getElementById("highscores")
+        highscoresList.appendChild(liEl);
+    }
 }
 function saveScore() {
     var initials = initials.value.trim();
@@ -21,4 +26,15 @@ function saveScore() {
         window.location.href = "highscores.html";
     }
 }
+
+function clearHighscores() {
+    window.localStorage.removeItem("highscores");
+    window.location.reload();
+}
+var clearHighscores = document.getElementById("clear");
+clearHighscores.onclick = function() {
+    localStorage.clear();
+    location.reload();
+}
+
 getScores();
